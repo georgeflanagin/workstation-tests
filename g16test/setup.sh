@@ -4,6 +4,7 @@ echo "To run the test again, you can just type 'g16test'."
 export MODULEPATH="/opt/modulefiles:/usr/local/ur/modulefiles"
 export PATH="/usr/local/anaconda/anaconda3/bin:$PATH"
 export output="g16test.out"
+export g16testdir=$(pwd)
 
 function record
 {
@@ -13,7 +14,7 @@ function record
 function g16test 
 {
     test_input=${1:-H_boat-boat_Ge_N.com}
-    command cd $HOME/g16test
+    command cd $g16testdir
     touch $output
     command rm -f $output
     module load gaussian/16
